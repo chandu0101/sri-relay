@@ -5,7 +5,6 @@ import sbt._
 
 object Dependencies {
 
-
   object Version {
 
     val scala211 = "2.11.8"
@@ -24,7 +23,6 @@ object Dependencies {
 
   }
 
-
   val scalatestJS = libraryDependencies += "org.scalatest" %%% "scalatest" % Version.scalatest % Test
 
   val scalaAsync = libraryDependencies += "org.scala-lang.modules" %% "scala-async" % Version.scalaAsync
@@ -41,17 +39,14 @@ object Dependencies {
 
   val scalaReflect = libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVersion.value % Provided
 
-
-  val relayModuleDeps = Seq(scalaReflect,sriUniversal)
+  val relayModuleDeps = Seq(scalaReflect, sriUniversal)
 
   val relayWebExamplesModuleDeps = Seq(sriWeb)
 
   val relayMobileExamplesModuleDeps = Seq(sriMobile)
 
-
-
-
-  val scalatestJSSettings = Seq(scalatestJS,
+  val scalatestJSSettings = Seq(
+    scalatestJS,
     scalaJSStage in Global := FastOptStage,
 //    scalaJSStage in Global := FullOptStage,
     jsDependencies += RuntimeDOM,
@@ -59,6 +54,5 @@ object Dependencies {
     jsEnv in Test := new PhantomJS2Env(scalaJSPhantomJSClassLoader.value, addArgs = Seq("--web-security=no"))
 //        jsEnv in Test := new NodeJSEnv()
   )
-
 
 }

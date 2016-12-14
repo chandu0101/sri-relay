@@ -7,6 +7,6 @@ import scala.scalajs.js
 
 object BuildRQL {
   type FragmentBuilder = js.Function1[Variables, RelayConcreteNode]
-  type QueryBuilder = js.Function0[RelayConcreteNode]
-  type VariableNames = Seq[String]
+  type QueryBuilder    = js.Function0[RelayConcreteNode]
+  type VariableNames   = Seq[String]
 }

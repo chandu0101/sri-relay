@@ -2,14 +2,13 @@ package sri.relay.container
 
 import chandu0101.macros.tojs.JSMacro
 import sri.core._
-import sri.relay.{RelayComponentProps, Relay}
+import sri.relay.{ Relay, RelayComponentProps }
 import sri.relay.route.RelayQueryConfig
 import sri.relay.store.RelayEnvironment
 import sri.relay.tools.ReadyState
 import scala.scalajs.js
 import scala.scalajs.js.annotation.ScalaJSDefined
-import scala.scalajs.js.{UndefOr => U, undefined}
-
+import scala.scalajs.js.{ UndefOr => U, undefined }
 
 case class RelayReadyStateRenderer[P <: RelayComponentProps, S](key: U[String] = undefined,
                                                                 ref: U[RelayReadyStateRendererM => _] = undefined,
@@ -17,7 +16,8 @@ case class RelayReadyStateRenderer[P <: RelayComponentProps, S](key: U[String] =
                                                                 environment: RelayEnvironment,
                                                                 queryConfig: RelayQueryConfig,
                                                                 readyState: U[ReadyState] = undefined,
-                                                                render: U[RelayRenderArgs[P] => ReactElement] = undefined,
+                                                                render: U[RelayRenderArgs[P] => ReactElement] =
+                                                                  undefined,
                                                                 retry: U[() => _] = undefined) {
 
   def apply(children: ReactNode*) = {

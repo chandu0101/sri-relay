@@ -4,27 +4,23 @@ import sbt._
 
 object CommonUtils {
 
-
-
   lazy val commonSettings =
-    Seq(
-      organization := "com.github.chandu0101",
-      version := "0.6.0-SNAPSHOT",
-      homepage := Some(url("https://github.com/chandu0101/sri-relay")),
-      licenses +=("Apache-2.0", url("http://opensource.org/licenses/Apache-2.0")),
-      scalaVersion := Dependencies.Version.scala211,
-      scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature",
-        "-language:postfixOps", "-language:implicitConversions",
-        "-language:higherKinds", "-language:existentials"))
-
-
+    Seq(organization := "com.github.chandu0101",
+        version := "0.6.0-SNAPSHOT",
+        homepage := Some(url("https://github.com/chandu0101/sri-relay")),
+        licenses += ("Apache-2.0", url("http://opensource.org/licenses/Apache-2.0")),
+        scalaVersion := Dependencies.Version.scala211,
+        scalacOptions ++= Seq("-deprecation",
+                              "-unchecked",
+                              "-feature",
+                              "-language:postfixOps",
+                              "-language:implicitConversions",
+                              "-language:higherKinds",
+                              "-language:existentials"))
 
   def DefProject(dir: String, _id: String = "") = {
     val id = if (_id.isEmpty) dir else _id
-    Project(id, file(dir))
-      .settings(commonSettings: _*)
-      .settings(Keys.name := "sri-" + id)
-      .enablePlugins(ScalaJSPlugin)
+    Project(id, file(dir)).settings(commonSettings: _*).settings(Keys.name := "sri-" + id).enablePlugins(ScalaJSPlugin)
   }
 
   def addCommandAliases(m: (String, String)*) = {
