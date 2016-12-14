@@ -5,7 +5,6 @@ import sbt._
 object LauncherConfigs {
 
   /** ================ React_native task   ================ */
-
   val fastOptMobile = Def.taskKey[File]("Generate mobile output file for fastOptJS")
 
   lazy val mobileLauncherFast =
@@ -61,23 +60,23 @@ object LauncherConfigs {
     )
 
   /**
-   * react-native prod bundler needs require function without name spaces
-   * @param text
-   * @return
-   */
+    * react-native prod bundler needs require function without name spaces
+    * @param text
+    * @return
+    */
   def processRequireFunctions(text: String): String = {
     val SJS_NAME_SPACE = "exportsNamespace:"
-    val i = text.indexOf(SJS_NAME_SPACE) + SJS_NAME_SPACE.length
-    val j = text.substring(i).indexOf(";") + i // TODO look for non valid identifier ![_$0-9a-zA-Z]
-    val nameSpace = text.substring(i, j)
+    val i              = text.indexOf(SJS_NAME_SPACE) + SJS_NAME_SPACE.length
+    val j              = text.substring(i).indexOf(";") + i // TODO look for non valid identifier ![_$0-9a-zA-Z]
+    val nameSpace      = text.substring(i, j)
     text.replaceAll(s"$nameSpace.require\\(", "require\\(")
   }
 
   /**
-   * react-native prod bundler needs require function without name spaces
-   * @param text
-   * @return
-   */
+    * react-native prod bundler needs require function without name spaces
+    * @param text
+    * @return
+    */
   def processRequireFunctionsInFastOpt(text: String): String = {
     text.replaceAll("\\$g.require\\(", "require\\(")
   }
@@ -113,12 +112,11 @@ object LauncherConfigs {
 
   val relayWebExamplesAssets = "relay-web-examples/assets"
 
-  lazy val relayWebExamplesLauncher = Seq(crossTarget in(Compile, fullOptJS) := file(relayWebExamplesAssets),
-    crossTarget in(Compile, fastOptJS) := file(relayWebExamplesAssets),
-    crossTarget in(Compile, packageScalaJSLauncher) := file(relayWebExamplesAssets),
-    artifactPath in(Compile, fastOptJS) := ((crossTarget in(Compile, fastOptJS)).value /
-      ((moduleName in fastOptJS).value + "-opt.js"))
-  )
-
+  lazy val relayWebExamplesLauncher = Seq(
+    crossTarget in (Compile, fullOptJS) := file(relayWebExamplesAssets),
+    crossTarget in (Compile, fastOptJS) := file(relayWebExamplesAssets),
+    crossTarget in (Compile, packageScalaJSLauncher) := file(relayWebExamplesAssets),
+    artifactPath in (Compile, fastOptJS) := ((crossTarget in (Compile, fastOptJS)).value /
+      ((moduleName in fastOptJS).value + "-opt.js")))
 
 }
