@@ -8,9 +8,8 @@ object RelayMetaRoute extends js.Object {
 }
 
 /**
- * Meta route based on the real route; provides access to the route name in
- * queries.
- */
+  * Meta route based on the real route; provides access to the route name in
+  * queries.
+  */
 @js.native
 class RelayMetaRoute(name: String) extends js.Object
-
