@@ -7,10 +7,10 @@ import scala.scalajs.js
 package object relay {
 
   /**
-   * typed version of js.concstructorOf[ C <: ReactJSComponent]
-   * @tparam P
-   * @tparam S
-   */
+    * typed version of js.concstructorOf[ C <: ReactJSComponent]
+    * @tparam P
+    * @tparam S
+    */
   @js.native
-  trait RelayTypedConstructor[P <: RelayComponentProps, S] extends ReactTypedConstructor[P,S]
+  trait RelayTypedConstructor[P <: RelayComponentProps, S] extends ReactTypedConstructor[P, S]
 }

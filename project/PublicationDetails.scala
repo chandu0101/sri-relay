@@ -4,15 +4,13 @@ import sbt._
 
 object PublicationDetails {
 
-
   val preventPublication =
-    Seq(
-      publishArtifact := false,
-      publish :=(),
-      publishLocal :=(),
-      publishLocalSigned :=(), // doesn't work
-      publishSigned :=(), // doesn't work
-      packagedArtifacts := Map.empty) // doesn't work - https://github.com/sbt/sbt-pgp/issues/42
+    Seq(publishArtifact := false,
+        publish := (),
+        publishLocal := (),
+        publishLocalSigned := (), // doesn't work
+        publishSigned := (), // doesn't work
+        packagedArtifacts := Map.empty) // doesn't work - https://github.com/sbt/sbt-pgp/issues/42
 
   def publicationSettings =
     Seq(
@@ -37,12 +35,13 @@ object PublicationDetails {
           </developers>,
       scalacOptions += {
         val a = (baseDirectory in LocalRootProject).value.toURI.toString
-        val g = "https://raw.githubusercontent.com/chandu0101/sri-relay/" + sys.process.Process("git rev-parse HEAD").lines_!.head
+        val g = "https://raw.githubusercontent.com/chandu0101/sri-relay/" + sys.process
+            .Process("git rev-parse HEAD")
+            .lines_!
+            .head
         s"-P:scalajs:mapSourceURI:$a->$g/"
       }
     )
-
-
   //  def sourceMapsToGithub =
   //    Seq(
   //      scalacOptions ++= (if (isSnapshot.value) Seq.empty else Seq({
@@ -51,6 +50,5 @@ object PublicationDetails {
   //        s"-P:scalajs:mapSourceURI:$a->$g/v${version.value}/"
   //      }))
   //    )
-
 
 }

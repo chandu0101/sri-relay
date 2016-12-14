@@ -5,7 +5,7 @@ import sri.relay.route.RelayQueryConfig.Params
 
 import scala.scalajs.js
 import scala.scalajs.js.JSConverters._
-import scala.scalajs.js.annotation.{JSName, ScalaJSDefined}
+import scala.scalajs.js.annotation.{ JSName, ScalaJSDefined }
 
 @js.native
 trait ParamDefinition extends js.Object {
