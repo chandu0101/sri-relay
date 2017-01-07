@@ -22,7 +22,8 @@ object RelayTypes {
   type FileMap                                       = js.Dictionary[js.Any]
   type MutationFragment                              = js.Any
   type RelayMutationConfig = js.Array[
-    FieldsChangeMutationConfig | RangeAddMutationConfig | NodeDeleteMutationConfig | RangeDeleteMutationConfig | RequiredChildrenMutationConfig]
+    FieldsChangeMutationConfig | RangeAddMutationConfig | NodeDeleteMutationConfig | RangeDeleteMutationConfig | RequiredChildrenMutationConfig
+  ]
 }
 
 @ScalaJSDefined

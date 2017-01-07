@@ -11,7 +11,8 @@ object StarWarsAppHomeQuery {
 
   def apply(factionNames: js.Array[String]) = new RelayQueryConfig {
     override val queries = RootQueries(
-      "factions" -> (() => js.eval(RelayQL("""query { factions(names: $factionNames)}"""))))
+      "factions" -> (() => js.eval(RelayQL("""query { factions(names: $factionNames)}""")))
+    )
     override val name: String = "StarWarsAppHomeQuery"
     override val params       = json("factionNames" -> factionNames)
   }

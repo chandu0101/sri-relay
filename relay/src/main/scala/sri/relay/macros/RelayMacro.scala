@@ -95,7 +95,8 @@ object RelayMacro {
       case _ =>
         c.abort(
           c.enclosingPosition,
-          s"""Input query should be constant string , Example : RelayMacro("query") ,variables/functions and triple quote string with .stripmargin are not allowed. """)
+          s"""Input query should be constant string , Example : RelayMacro("query") ,variables/functions and triple quote string with .stripmargin are not allowed. """
+        )
     }
 
     val inputCode =

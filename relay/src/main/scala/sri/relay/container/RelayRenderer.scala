@@ -21,7 +21,8 @@ case class RelayRenderer[P <: RelayComponentProps, S](
     onPrimeCache: U[(RelayQuerySet, js.Function1[ReadyState, _]) => Abortable] = undefined,
     onReadyStateChange: U[ReadyState => _] = undefined,
     queryConfig: RelayQueryConfig,
-    render: U[RelayRenderArgs[P] => ReactElement] = undefined) {
+    render: U[RelayRenderArgs[P] => ReactElement] = undefined
+) {
 
   def apply(children: ReactNode*) = {
     val props = JSMacro[RelayRenderer[P, S]](this)
