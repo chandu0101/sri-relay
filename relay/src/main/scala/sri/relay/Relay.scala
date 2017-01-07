@@ -10,8 +10,9 @@ import sri.relay.tools.RelayInternalTypes.RelayQuerySet
 import sri.relay.tools.RelayTaskScheduler.TaskExecutor
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSName
+import scala.scalajs.js.annotation.{ JSImport, JSName }
 
+@JSImport("react-relay", JSImport.Namespace)
 @js.native
 object Relay extends js.Object {
   val RootContainer: ReactClass      = js.native

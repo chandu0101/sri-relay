@@ -1,10 +1,10 @@
 package sri.relay.mutation
 
-import sri.relay.tools.RelayTypes.{ FileMap, MutationFragment, RelayMutationConfig }
+import sri.relay.tools.RelayTypes.{FileMap, MutationFragment, RelayMutationConfig}
 
 import scala.scalajs.js
 import scala.scalajs.js.`|`
-import scala.scalajs.js.annotation.{ JSName, ScalaJSDefined }
+import scala.scalajs.js.annotation.{ JSImport, JSName, ScalaJSDefined }
 
 /**
   * public
@@ -12,7 +12,7 @@ import scala.scalajs.js.annotation.{ JSName, ScalaJSDefined }
   * RelayMutation is the base class for modeling mutations of data.
   */
 @js.native
-@JSName("Relay.Mutation")
+@JSImport("react-relay", "Mutation")
 abstract class RelayMutationJS(var props: js.Dynamic) extends js.Object {
 
   val fragments: js.Any = js.native
