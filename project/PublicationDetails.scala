@@ -5,12 +5,14 @@ import sbt._
 object PublicationDetails {
 
   val preventPublication =
-    Seq(publishArtifact := false,
-        publish := (),
-        publishLocal := (),
-        publishLocalSigned := (), // doesn't work
-        publishSigned := (), // doesn't work
-        packagedArtifacts := Map.empty) // doesn't work - https://github.com/sbt/sbt-pgp/issues/42
+    Seq(
+      publishArtifact := false,
+      publish := (),
+      publishLocal := (),
+      publishLocalSigned := (), // doesn't work
+      publishSigned := (), // doesn't work
+      packagedArtifacts := Map.empty
+    ) // doesn't work - https://github.com/sbt/sbt-pgp/issues/42
 
   def publicationSettings =
     Seq(

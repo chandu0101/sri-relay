@@ -5,7 +5,7 @@ import sri.relay.route.RelayQueryConfig.Params
 
 import scala.scalajs.js
 import scala.scalajs.js.JSConverters._
-import scala.scalajs.js.annotation.{ JSName, ScalaJSDefined }
+import scala.scalajs.js.annotation.{JSImport, JSName, ScalaJSDefined}
 
 @js.native
 trait ParamDefinition extends js.Object {
@@ -31,5 +31,5 @@ trait RelayQueryConfig extends js.Object {
 }
 
 @js.native
-@JSName("Relay.Route")
+@JSImport("react-relay", "Route")
 abstract class AbstractRelayQueryConfig(initialParams: js.UndefOr[Params] = js.undefined) extends js.Object

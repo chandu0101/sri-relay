@@ -117,6 +117,7 @@ object LauncherConfigs {
     crossTarget in (Compile, fastOptJS) := file(relayWebExamplesAssets),
     crossTarget in (Compile, packageScalaJSLauncher) := file(relayWebExamplesAssets),
     artifactPath in (Compile, fastOptJS) := ((crossTarget in (Compile, fastOptJS)).value /
-      ((moduleName in fastOptJS).value + "-opt.js")))
+      ((moduleName in fastOptJS).value + "-opt.js"))
+  )
 
 }

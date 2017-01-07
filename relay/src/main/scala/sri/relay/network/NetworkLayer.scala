@@ -2,7 +2,7 @@ package sri.relay.network
 
 import scala.scalajs.js
 import scala.scalajs.js.Promise
-import scala.scalajs.js.annotation.{ JSName, ScalaJSDefined }
+import scala.scalajs.js.annotation.{ JSImport, JSName, ScalaJSDefined }
 
 @js.native
 trait GraphQLError extends js.Object {
@@ -31,7 +31,7 @@ class DefaultNetworkLayerConfig(val fetchTimeout: js.UndefOr[Int] = js.undefined
     extends js.Object
 
 @js.native
-@JSName("Relay.DefaultNetworkLayer")
+@JSImport("react-relay", "DefaultNetworkLayer")
 class DefaultNetworkLayer(val url: js.UndefOr[String] = js.undefined,
                           config: js.UndefOr[DefaultNetworkLayerConfig] = js.undefined)
     extends NetworkLayer {

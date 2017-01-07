@@ -7,7 +7,7 @@ import scala.scalajs.js
 package object relay {
 
   /**
-    * typed version of js.concstructorOf[ C <: ReactJSComponent]
+    * typed version of js.constructorOf[ C <: ReactJSComponent]
     * @tparam P
     * @tparam S
     */

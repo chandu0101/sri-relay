@@ -22,7 +22,8 @@ object RelayElementFactory {
     createRelayElementWithChildren(container, props)()
 
   def createRelayElementWithChildren[P <: RelayComponentProps, S](container: => RelayContainer[P, S], props: P)(
-      children: ReactNode*): ReactElementU[_, _] = {
+      children: ReactNode*
+  ): ReactElementU[_, _] = {
     React.createElement(container, props, children: _*).asInstanceOf[ReactElementU[_, _]]
   }
 

@@ -68,7 +68,8 @@ trait RelayEnvironment extends js.Object {
     */
   def applyUpdate(
       mutation: RelayMutation,
-      callbacks: js.UndefOr[RelayMutationTransactionCommitCallbacks] = js.undefined): RelayMutationTransaction =
+      callbacks: js.UndefOr[RelayMutationTransactionCommitCallbacks] = js.undefined
+  ): RelayMutationTransaction =
     js.native
 
   /**
@@ -77,6 +78,7 @@ trait RelayEnvironment extends js.Object {
     */
   def commitUpdate(
       mutation: RelayMutation,
-      callbacks: js.UndefOr[RelayMutationTransactionCommitCallbacks] = js.undefined): RelayMutationTransaction =
+      callbacks: js.UndefOr[RelayMutationTransactionCommitCallbacks] = js.undefined
+  ): RelayMutationTransaction =
     js.native
 }

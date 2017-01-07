@@ -22,7 +22,8 @@ object StarWarsApp {
               div()(
                 faction.ships.edges.asInstanceOf[js.Array[js.Dynamic]].map(edge => div()(StarWarsShip(edge.node)))
               )
-          ))
+          )
+        )
       )
     }
   }
@@ -34,9 +35,12 @@ object StarWarsApp {
 
   val ctor = getRelayTypedConstructor(js.constructorOf[Component], classOf[Component])
 
-  val container = Relay.createContainer(ctor, new RelayContainerSpec {
+  val container = Relay.createContainer(
+    ctor,
+    new RelayContainerSpec {
 
-    override val fragments = Fragments("factions" -> (() => js.eval(RelayQL("""
+      override val fragments =
+        Fragments("factions" -> (() => js.eval(RelayQL("""
         fragment on Faction @relay(plural: true) {
                 name,
                 ships(first: 3) {
@@ -48,6 +52,7 @@ object StarWarsApp {
                 }
               }
       """))))
-  })
+    }
+  )
 
 }
